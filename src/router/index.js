@@ -3,6 +3,7 @@ import { useAuthStore } from "../stores/auth";
 
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
+import EmployeesView from "../views/EmployeesView.vue";
 
 export function createRouter() {
   const router = _createRouter({
@@ -18,6 +19,12 @@ export function createRouter() {
         name: "home",
         component: HomeView,
         meta: { requiresAuth: true }
+      },
+      {
+        path: "/employees",
+        name: "employees",
+        component: EmployeesView,
+        meta: { requiresAuth: true },
       },
     ],
   });

@@ -22,7 +22,7 @@ async function onLogout() {
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/">Início</RouterLink>
+              <RouterLink class="nav-link" to="/employees">Colaboradores</RouterLink>
             </li>
           </ul>
 
