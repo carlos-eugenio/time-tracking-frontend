@@ -22,13 +22,13 @@ async function onLogout() {
         <div class="collapse navbar-collapse" id="mainNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/employees">Colaboradores</RouterLink>
+              <RouterLink class="nav-link" to="/employees" active-class="active text-white">Colaboradores</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/time-entries">Pontos</RouterLink>
+              <RouterLink class="nav-link" to="/time-entries" active-class="active text-white">Pontos</RouterLink>
             </li>
             <li class="nav-item">
-              <RouterLink class="nav-link" to="/reports/time-entries">Relatório</RouterLink>
+              <RouterLink class="nav-link" to="/reports/time-entries" active-class="active text-white">Relatório</RouterLink>
             </li>            
           </ul>
 
