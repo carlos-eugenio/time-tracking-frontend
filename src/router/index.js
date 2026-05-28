@@ -4,6 +4,7 @@ import { useAuthStore } from "../stores/auth";
 import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import EmployeesView from "../views/EmployeesView.vue";
+import TimeEntriesView from "../views/TimeEntriesView.vue";
 
 export function createRouter() {
   const router = _createRouter({
@@ -24,6 +25,12 @@ export function createRouter() {
         path: "/employees",
         name: "employees",
         component: EmployeesView,
+        meta: { requiresAuth: true },
+      },
+      {
+        path: "/time-entries",
+        name: "time-entries",
+        component: TimeEntriesView,
         meta: { requiresAuth: true },
       },
     ],
