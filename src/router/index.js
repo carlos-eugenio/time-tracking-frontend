@@ -1,0 +1,41 @@
+import { createRouter as _createRouter, createWebHistory } from "vue-router";
+import { useAuthStore } from "../stores/auth";
+
+import HomeView from "../views/HomeView.vue";
+import LoginView from "../views/LoginView.vue";
+
+export function createRouter() {
+  const router = _createRouter({
+    history: createWebHistory(),
+    routes: [
+      {
+        path: "/login",
+        name: "login",
+        component: LoginView
+      },
+      {
+        path: "/",
+        name: "home",
+        component: HomeView,
+        meta: { requiresAuth: true }
+      },
+    ],
+  });
+
+  router.beforeEach((to) => {
+    const auth = useAuthStore();
+
+    if (to.path === "/login" && auth.isAuthenticated) {
+      return { path: "/" };
+    }
+
+    if (to.meta?.requiresAuth && !auth.isAuthenticated) {
+      return { path: "/login" };
+    }
+
+    return true;
+  });
+
+  return router;
+}
+

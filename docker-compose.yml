@@ -1,0 +1,18 @@
+services:
+  frontend:
+    build:
+      context: .
+    container_name: time-tracking-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    command: ["npm", "run", "dev"]
+
+volumes:
+  node_modules:
+    name: time-tracking-frontend-node-modules
+
