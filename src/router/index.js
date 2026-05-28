@@ -5,6 +5,7 @@ import HomeView from "../views/HomeView.vue";
 import LoginView from "../views/LoginView.vue";
 import EmployeesView from "../views/EmployeesView.vue";
 import TimeEntriesView from "../views/TimeEntriesView.vue";
+import TimeEntryReportView from "../views/TimeEntryReportView.vue";
 
 export function createRouter() {
   const router = _createRouter({
@@ -31,6 +32,12 @@ export function createRouter() {
         path: "/time-entries",
         name: "time-entries",
         component: TimeEntriesView,
+        meta: { requiresAuth: true },
+      },
+      {
+        path: "/reports/time-entries",
+        name: "reports.time-entries",
+        component: TimeEntryReportView,
         meta: { requiresAuth: true },
       },
     ],

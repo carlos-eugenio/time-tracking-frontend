@@ -27,6 +27,9 @@ async function onLogout() {
             <li class="nav-item">
               <RouterLink class="nav-link" to="/time-entries">Pontos</RouterLink>
             </li>
+            <li class="nav-item">
+              <RouterLink class="nav-link" to="/reports/time-entries">Relatório</RouterLink>
+            </li>            
           </ul>
 
           <button class="btn btn-outline-light btn-sm" @click="onLogout">
