@@ -227,7 +227,7 @@ onMounted(load);
           <tr v-for="e in employees" :key="e.id">
             <td>
               <div class="fw-semibold">{{ e.name }}</div>
-              <div class="text-muted small">· {{ e.document || "Sem documento" }}</div>
+              <div class="text-muted small">· {{ e.registration_number || "-" }}</div>
             </td>
             <td>{{ e.email || "-" }}</td>
             <td>{{ e.job_title || "-" }}</td>

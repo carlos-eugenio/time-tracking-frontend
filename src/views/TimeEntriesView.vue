@@ -283,6 +283,7 @@ onMounted(async () => {
             <th>Colaborador</th>
             <th>Entrada</th>
             <th>Saída</th>
+            <th>Matrícula</th>
             <th>Observações</th>
             <th class="text-end" style="width: 160px">Ações</th>
           </tr>
@@ -291,10 +292,11 @@ onMounted(async () => {
           <tr v-for="t in entries" :key="t.id">
             <td>
               <div class="fw-semibold">{{ employeesMap.get(t.employee_id)?.name || `#${t.employee_id}` }}</div>
-              <div class="text-muted small">#{{ t.id }}</div>
+              <div class="text-muted small">· {{ employeesMap.get(t.employee_id)?.registration_number || "-" }}</div>
             </td>
             <td>{{ formatDateTime(t.started_at) }}</td>
             <td>{{ t.ended_at ? formatDateTime(t.ended_at) : "-" }}</td>
+            <td>{{ employeesMap.get(t.employee_id)?.registration_number || "-" }}</td>
             <td class="text-muted">{{ t.notes || "-" }}</td>
             <td class="text-end">
               <div class="btn-group btn-group-sm">
