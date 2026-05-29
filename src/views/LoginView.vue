@@ -7,8 +7,8 @@ const router = useRouter();
 const auth = useAuthStore();
 
 const form = reactive({
-  email: "email@email.com",
-  password: "senha1234",
+  email: "admin@email.com",
+  password: "adminTeste1234",
 });
 
 const submitError = ref(null);
